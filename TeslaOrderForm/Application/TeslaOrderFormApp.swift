@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TeslaOrderFormApp: App {
+    @StateObject private var order = OrderViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(order)
         }
     }
 }

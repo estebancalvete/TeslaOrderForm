@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct FormView: View {
-    @ObservedObject var order = OrderViewModel()
+    @EnvironmentObject var order: OrderViewModel
     
     init() {
         UITableView.appearance().sectionHeaderHeight = 0
