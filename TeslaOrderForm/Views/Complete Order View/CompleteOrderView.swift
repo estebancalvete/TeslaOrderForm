@@ -11,15 +11,21 @@ struct CompleteOrderView: View {
     @EnvironmentObject var order: OrderViewModel
     
     var body: some View {
-        VStack {
-            TopOrderView()
-                .padding(.top, 20)
-                .environmentObject(order)
-            BottomOrderView()
-                .environmentObject(order)
+        ZStack {
+            VStack {
+                TopOrderView()
+                    .padding(.top, 20)
+                    .environmentObject(order)
+                BottomOrderView()
+                    .environmentObject(order)
+            }
+            .background(Color.white)
+            .edgesIgnoringSafeArea(.horizontal)
         }
-        .background(Color.white)
-        .edgesIgnoringSafeArea(.horizontal)
+        CancelOrderView()
+            .environmentObject(order)
+            .opacity(order.isCancelOrderVisible ? 1 : 0)
+            .animation(Animation.easeOut, value: 0)
     }
 }
 

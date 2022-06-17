@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 
+//To use as a background, it can be used as follows:
+//Rectangle()
+//    .fill(Color.clear)
+//    .background(VibrancyBackground())
+
 struct VibrancyBackground: UIViewRepresentable {
     
     var style: UIBlurEffect.Style = .light
